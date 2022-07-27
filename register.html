@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatty</title>
+    
+    <link rel="stylesheet" id="stylesheet" href="css/style.css">
+</head>
+<body id="register-bg">
+    <div class="container2">
+        <div class="container-reg">
+            <input type="checkbox" id="switch" onclick="functionTry()"/><label for="switch"></label>
+                <div class="logo"></div>
+                    <div class="header">
+                        <h2 class="animation a1">Register</h2>
+                        <h4 class="animation a2">Please fill in this form to create an account.</h4>
+                    </div>
+            <div>
+                <form id="register" name="register-form" class="form">
+                    <input id="firstname" name="firstname"type="text" class="form-field animation a3" placeholder="First name">
+                    <input id="lastname" name="lastname"type="text" class="form-field animation a3" placeholder="Last name">
+                    <input id="middlename" name="middlename"type="text" class="form-field animation a3" placeholder="Middle name (if needed)">
+                    <input id="email" name="email"type="email" class="form-field animation a4" placeholder="E-mail">
+                    <input id="username" name="username" type="text" class="form-field animation a4" placeholder="Username">
+                    <input id="password" name="password" type="password" class="form-field animation a4" placeholder="Password">
+                    <p class="animation a5"><a href="index.html">If you already have an account, click here to sign in!</a></p>
+                    <input class="animation a5 btn btncolor" type="submit" value="SIGN UP">
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="js/dark.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

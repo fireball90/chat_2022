@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatty</title>
+
+    <link rel="stylesheet" id="stylesheet" href="css/style.css">
+</head>
+<body class="chatbg">
+        <nav>
+          <div class="nav-container">
+            <div class="logo2">
+            </div>
+<!--              <div class="middle-bar">
+                <input type="text" class="search-bar" placeholder="Search...">
+            </div> -->
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" class="searchTerm" id="searchFriend" placeholder="Add a friend...">
+                    <button type="submit" onclick="searchRequest()" class="searchButton">
+                         <i class="fa fa-search"></i>
+                    </button>
+                    <div id="search-list" class="hidden">
+
+                    </div>
+                </div>
+             </div>
+            <ul>
+              <li><a id="logout">Sign out</a></li>
+              <input type="checkbox" id="switch" onclick="functionTry()"/><label for="switch"></label>
+            </ul>
+          </div>
+        </nav>
+        
+        <!-- basic layout -->
+        <div class="" id="desktop-view">
+            <section class="layout">
+                <div class="chat-left">
+                    <div class="chat-friends">
+                        <div id="friend-header">
+                           <!--  <div>
+                                <img src="https://randomuser.me/api/portraits/women/57.jpg" alt="">
+                            </div>
+                            <div class="wrap2">
+                                <p>Your Name</p>
+                                <div class="search2">
+                                    <input type="text" class="searchTerm2" placeholder="Search a friend...">
+                                    <button type="submit" class="searchButton2">
+                                         <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div id="friend-box">
+                            <div id="friend-list">
+                                <!-- load friends here -->
+<!--                                 <div id="friend-template">
+                                    <div>
+                                            <img src="https://randomuser.me/api/portraits/women/56.jpg" alt="">
+                                    </div>
+                                    <div id="friend-text">
+                                        <p>Kate Morrison</p>
+                                        <small>katemorrison@gmail.com</small>
+                                    </div>
+                                </div>  -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-requests">
+                        <div id="request-header">
+                            <div class="wrap2">
+                                <p>Incoming friend requests</p>
+                            </div>
+                        </div>
+                        <div id="request-box">
+                            <div id="request-list">
+                                <!-- load friends here -->
+                                <!--<div id="request-template">
+                                     <div>
+                                            <img src="https://randomuser.me/api/portraits/women/53.jpg" alt="">
+                                    </div>
+                                    <div id="request-text">
+                                        <div>
+                                            <p>Jade Alakmah</p> 
+                                        </div>                                    
+                                        <div id="btnbox">
+                                            <button type="submit" class="btn3"><i class="fa-solid fa-user-plus"></i></button>
+                                            <button type="submit" class="btn3"><i class="fa-solid fa-user-minus"></i></button>  
+                                        </div>                                                                   
+                                    </div> 
+                                </div> -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-right">
+                    <div id="message-header">
+<!--                         <div>
+                            <img src="https://randomuser.me/api/portraits/women/56.jpg" alt="">
+                        </div>
+                        <div class="wrap2">
+                            <p>Kate Morrison</p>
+                            <small>katemorrison@gmail.com</small>
+                        </div> -->
+                    </div>
+                    <div id="message-box">
+
+                    </div>
+                    <div id="message-send">
+                        <div id="message-bubble">
+                            <div class="wrap3">
+                                <div class="message-text">
+                                    <input type="text" class="searchTerm3" id="searchFriend" placeholder="Type a message...">
+                                    <button type="submit" onclick="searchRequest()" class="searchButton3">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- mobile / tablet layout -->
+        <div class="hidden" id="mobile-view">
+            <div class="minibar" id="minibar">
+                <button onclick="showFriends()" type="submit" class="btn2">
+                    <i class="fa-solid fa-user-group"></i>
+               </button>
+               <button onclick="showRequests()" type="submit" class="btn2">
+                <i class="fa-solid fa-user-plus"></i>
+                </button>
+            </div> 
+            <section class="layout2">              
+                <div class="friends hidden" id="friends">
+                    <div id="mobile-friends-header">
+                            <!-- <div>
+                                <img src="https://randomuser.me/api/portraits/women/57.jpg" alt="">
+                            </div>
+                            <div class="wrap2">
+                                <p>Your Name</p>
+                                <div class="search2">
+                                    <input type="text" class="searchTerm2" placeholder="Search a friend...">
+                                    <button type="submit" class="searchButton2">
+                                         <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div> -->
+                        
+                    </div>
+                    <div id="mobile-friend-box">
+                            <div id="mobile-friend-list">
+                                <!-- load friends here -->
+<!--                                 <div id="friend-template">
+                                    <div>
+                                            <img src="https://randomuser.me/api/portraits/women/56.jpg" alt="">
+                                    </div>
+                                    <div id="friend-text">
+                                        <p>Kate Morrison</p>
+                                        <small>katemorrison@gmail.com</small>
+                                    </div>
+                                </div>  -->
+                            </div>
+                    </div>
+                </div>
+                <div class="chatmobile" id="chatmobile">
+                    <div id="mobile-message-header">
+                        <div id="message-header">
+<!--                             <div>
+                                <img src="https://randomuser.me/api/portraits/women/56.jpg" alt="">
+                            </div>
+                            <div class="wrap2">
+                                <p>Kate Morrison</p>
+                                <small>katemorrison@gmail.com</small>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div id="mobile-message-box">
+                            <!-- Chat msg box -->
+                    </div>
+                    <div id="mobile-message-send">
+                        <div id="message-send">
+                            <div id="message-bubble">
+                                <div class="wrap3">
+                                    <div class="message-text">
+                                        <input type="text" class="searchTerm3" placeholder="Type a message...">
+                                        <button type="submit" class="searchButton3">
+                                            <i class="fa-solid fa-paper-plane"></i>
+                                        </button>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="requests hidden" id="requests">
+                    <div id="mobile-request-header">
+                        <div id="request-header">
+                            <div class="wrap2">
+                                <p>Incoming friend requests</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mobile-request-box">
+                        <div id="mobile-request-list">
+                            <!-- load friends here -->
+<!--                             <div id="request-template">
+                                <div>
+                                        <img src="https://randomuser.me/api/portraits/women/53.jpg" alt="">
+                                </div>
+                                <div id="request-text">
+                                    <div>
+                                        <p>Jade Alakmah</p> 
+                                    </div>                                    
+                                    <div id="btnbox">
+                                        <button type="submit" class="btn3"><i class="fa-solid fa-user-plus"></i></button>
+                                        <button type="submit" class="btn3"><i class="fa-solid fa-user-minus"></i></button>  
+                                    </div>                                                                   
+                                </div>
+                            </div>  -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+<!--     <div class="message">
+        <div class="message-avatar">
+                <img src="https://randomuser.me/api/portraits/women/57.jpg" alt="">
+        </div>
+    <div class="message-body">
+            <p>New notification from kate morrison.</p>
+        <small>20s ago</small>
+    </div>
+</div> -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.0.0/js/all.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/dark.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
